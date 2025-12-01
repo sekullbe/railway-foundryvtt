@@ -6,7 +6,7 @@ ARG FOUNDRY_VERSION=13.351
 
 EXPOSE 30000/TCP
 
-RUN sudo chown -R 1000:1000 /data
+RUN chown -R 1000:1000 /data
 
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["resources/app/main.mjs", "--port=30000", "--headless", "--noupdate", "--dataPath=/data"]
