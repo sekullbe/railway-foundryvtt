@@ -6,10 +6,6 @@ ARG FOUNDRY_VERSION=13.351
 
 EXPOSE 30000/TCP
 
-USER root
-RUN chown -R 1000:1000 /data
-
-USER node
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["resources/app/main.mjs", "--port=30000", "--headless", "--noupdate", "--dataPath=/data"]
 HEALTHCHECK --start-period=3m --interval=30s --timeout=5s CMD ./check_health.sh
