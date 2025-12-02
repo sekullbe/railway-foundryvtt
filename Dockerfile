@@ -7,7 +7,7 @@ ARG FOUNDRY_VERSION=13.351
 EXPOSE 30000/TCP
 
 USER root
-chown -R 1000:1000 /data
+RUN chown -R 1000:1000 /data
 
 USER node
 ENTRYPOINT ["./entrypoint.sh"]
